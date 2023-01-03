@@ -10,4 +10,5 @@ package com.project.controller;
  */
 public class ControllerTutor {
     
+    private String tutor;
 }
