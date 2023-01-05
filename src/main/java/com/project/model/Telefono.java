@@ -15,7 +15,7 @@ import java.util.Objects;
  * @author Paula
  */
 @Entity
-@Table(name="telefonos")
+@Table(name="telefono")
 public class Telefono {
     
     @Id

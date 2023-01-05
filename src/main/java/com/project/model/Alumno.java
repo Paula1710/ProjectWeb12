@@ -38,12 +38,12 @@ public class Alumno {
     @Column(name="contrasenna")
     private String contrasenna;
     @Column(name="telefono")
-    private Telefono telefono;
+    private int telefono;
 
     public Alumno() {
     }
 
-    public Alumno(int id, String nombre, String apellidos, String direccion, String correo, Date fecha_nacimiento, double nota_media, String contrasenna, Telefono telefono) {
+    public Alumno(int id, String nombre, String apellidos, String direccion, String correo, Date fecha_nacimiento, double nota_media, String contrasenna, int telefono) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -55,16 +55,6 @@ public class Alumno {
         this.telefono = telefono;
     }
 
-    public Alumno(String nombre, String apellidos, String direccion, String correo, Date fecha_nacimiento, double nota_media, String contrasenna, Telefono telefono) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.direccion = direccion;
-        this.correo = correo;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.nota_media = nota_media;
-        this.contrasenna = contrasenna;
-        this.telefono = telefono;
-    }
 
     public int getId() {
         return id;
@@ -130,21 +120,15 @@ public class Alumno {
         this.contrasenna = contrasenna;
     }
 
-    public Telefono getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(Telefono telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
     
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Alumno alumno = (Alumno) o;
-        return id == alumno.id && nombre.equals(alumno.nombre) && apellidos.equals(alumno.apellidos) && direccion.equals(alumno.direccion) && correo.equals(alumno.correo) && fecha_nacimiento == alumno.fecha_nacimiento && nota_media == alumno.nota_media && contrasenna.equals(alumno.contrasenna) && telefono.equals(alumno.telefono);
-    }
+ 
 
     @Override
     public int hashCode() {
