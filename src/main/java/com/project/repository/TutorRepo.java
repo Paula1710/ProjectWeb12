@@ -7,6 +7,7 @@ package com.project.repository;
 import com.project.model.Tutor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+
 /**
  *
  * @author Alberto Galindo

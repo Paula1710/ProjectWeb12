@@ -41,6 +41,19 @@ public class Empresa {
         this.telefono = telefono;
     }
 
+    public Empresa(String nombre, String direccion, int capacidad, int tutor_id, int telefono) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.capacidad = capacidad;
+        this.tutor_id = tutor_id;
+        this.telefono = telefono;
+    }
+
+    public Empresa() {
+    }
+    
+    
+
     public int getId() {
         return id;
     }
@@ -89,6 +102,16 @@ public class Empresa {
         this.telefono = telefono;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "Id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", capacidad='" + capacidad + '\'' +
+                ", id del tutor='" + tutor_id + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
     
 }

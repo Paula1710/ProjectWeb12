@@ -4,13 +4,13 @@
  */
 package com.project.repository;
 
-import com.project.model.Responsable;
+import com.project.model.Empresa;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
- * @author Alberto Galindo
+ * @author Paula
  */
-public interface ResponsableRepo extends JpaRepository<Responsable,Integer>{
+public interface EmpresaRepo  extends JpaRepository<Empresa,Integer>{
     
 }

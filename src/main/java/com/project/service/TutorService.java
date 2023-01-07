@@ -4,10 +4,42 @@
  */
 package com.project.service;
 
+import com.project.model.Empresa;
+import com.project.model.Tutor;
+import com.project.repository.EmpresaRepo;
+import com.project.repository.TutorRepo;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author Paula
  */
+@Service
 public class TutorService {
     
+    private EmpresaRepo empresaRepository;
+     
+    
+    @Autowired
+    public TutorService(EmpresaRepo empresaRepository) {
+        this.empresaRepository = empresaRepository;
+    }
+    
+    public List<Empresa> listarEmpresa(){
+        return empresaRepository.findAll();
+    }
+
+    public void crearEmpresa(Empresa empresa){
+         empresaRepository.save(empresa);
+    }
+    
+    public void borrarEmpresa(int id){
+        empresaRepository.deleteById(id);
+    } 
+    
+    public void getEmpresa(int id){
+        empresaRepository.findById(id);
+    }
 }
