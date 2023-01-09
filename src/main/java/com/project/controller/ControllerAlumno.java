@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ControllerAlumno {
-    
+/**   
     @Autowired
     private AlumnoRepo alumRepo;
     
@@ -28,4 +28,5 @@ public class ControllerAlumno {
 		
 		return alumRepo.findAll();
 	}
+        * */
 }
