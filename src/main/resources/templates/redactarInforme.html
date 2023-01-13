@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rellenar Informes</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:th="http://www.thymeleaf.org/"></meta>
+        <link rel="stylesheet" href="../css/redactarInforme.css"></link>
+    </head>
+
+    <body>
+        <section class="informe" id="informe">
+            <h1>REDACTAR INFORME</h1>
+            <h2>Listado de alumnos asignados al tutor: </h2>
+            <table class="tablaGlobal" id="tablaGlobal">
+                <tbody>
+                    <tr>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre Alumno</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="alumnosPracticas : ${alumnosPracticas} ">
+                                        <td>
+                                            <span th:text="${alumnosPracticas.nombre}"></span>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre Empresa</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="empresaPracticas : ${empresaPracticas} ">
+                                        <td>
+                                            <span th:text="${empresaPracticas.nombre}"></span>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Nota prácticas</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="practicaPracticas : ${practicaPracticas} ">
+                                        <td>
+                                            <span th:text="${practicaPracticas.nota_practica}"></span>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Comentarios prácticas</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="practicaPracticas : ${practicaPracticas} ">
+                                        <td>
+                                            <span th:text="${practicaPracticas.informe}"></span>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Editar</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="practicaPracticas : ${practicaPracticas} ">
+                                        <td>
+                                            <a th:href="@{/tutor/redactarInforme/editarNota/{id}(id = ${practicaPracticas.id})}" class="botones" >Editar</a>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <script src="../js/redactarInforme.js"></script>
+
+            <input class="botonAtras" type="submit" name="botonAtras" id="botonAtras" value="Atras"
+                   onclick=atras()>
+        </section>
+    </body>
+</html>

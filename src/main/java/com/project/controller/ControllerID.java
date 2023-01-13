@@ -2,12 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.project.modelDTO;
+package com.project.controller;
 
 /**
- *
- * @author Paula
+ * Clase ControllerID
+ * 
+ * @author Grupo12
  */
-public class TutorDTO {
-    
+public class ControllerID {
+
+    public static int IDALUMNO, IDTUTOR, IDRESPONSABLE;
+
 }

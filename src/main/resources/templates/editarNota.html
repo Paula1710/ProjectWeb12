@@ -1,0 +1,31 @@
+<html>
+
+    <head>
+        <title>Editar Nota</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/"></meta>
+        <link rel="stylesheet" href="../../../css/editarNota.css"></link>
+    </head>
+    <body>
+        <section class="editar" id="editar">
+
+            <h1>EDITAR NOTA</h1>
+            <tr th:each= "practica: ${practica} ">
+                <form  name="informeTutor" th:action ="@{/tutor/redactarInforme/editarNota/{id}/guardar (id = ${practica.id})}" th:object="${practicas_Tutor}"  method="post">
+                    <h2>Nota: </h2>
+                    <input class="controls" type="text" name="nota_practica" id="nota_practica" field= "*{practicas_Tutor.nota_practica}"
+                           placeholder="Nota de practica"></input>
+                    <h2>Comentario: </h2>
+                    <input class="controls" type="text" name="informe" id="informe" field= "*{practicas_Tutor.informe}"
+                           placeholder="Informe de practica"></input>
+
+                    <input class="botones" type="button" name="botonAtras" id="botonAtras" value="Atrás" onclick=atras()
+                           style="margin-left: 430px;"></input>
+
+                    <button class="botones btn-success">Guardar</button>
+                </form>
+            </tr>
+        </section>
+        <script src="../../../js/editarNota.js"></script>
+    </body>
+</html>
