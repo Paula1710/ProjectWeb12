@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Asignar Prácticas</title>
+        <meta charset="UTF-8" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" ></meta>
+        <script src="html2pdf.buncle.min.js"></script>
+        <link rel="stylesheet" href="../css/asignarPractica.css"></link>
+    </head>
+
+    <body>
+        <section class="informe" id="informe">
+            <h1>ASIGNACIÓN DE PRÁCTICAS</h1>
+            <h2>Listado de alumnos para asignar prácticas: </h2>
+            <table class="tablaGlobal" id="tablaGlobal">
+                <tbody>
+                    <tr>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Alumno</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="alumno : ${alumnosPracticas} ">
+                                        <td>
+                                            <span th:text="${alumno.nombre}"></span>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Nota Media</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="alumno : ${alumnosPracticas} ">
+                                        <td>
+                                            <span th:text="${alumno.nota_media}"></span>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Empresa</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="empresa : ${empresasPracticas} ">
+                                        <td>
+                                            <span th:text="${empresa.nombre}"></span>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Asignar</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="practicas_solicitadas : ${listaSolicitudes} ">
+                                        <td>
+                                            <a th:href="@{/responsable/asignarPractica/asignar/{id}(id = ${practicas_solicitadas.id})}" class="botones" >Asignar</a>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                        <th>
+                            <table class="tabla" id="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Rechazar</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cuerpo" id="contenedor">
+                                    <tr th:each="practicas_solicitadas : ${listaSolicitudes} ">
+                                        <td>
+                                            <a th:href="@{/responsable/asignarPractica/rechazar/{id}(id = ${practicas_solicitadas.id})}" class="botones" >Rechazar</a>
+                                        </td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"></script>
+            <input class="botonAtras" type="button" name="botonAtras" id="botonAtras" value="Atrás"
+                   onclick=atras() style="margin-left: 418px;"></input>
+        </section>
+        <script src="../js/asignarPractica.js"></script>
+    </body>
+</html>

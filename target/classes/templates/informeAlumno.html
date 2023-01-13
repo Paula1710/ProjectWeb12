@@ -1,0 +1,70 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Informe de Prácticas</title>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/"></meta>
+        <script src="html2pdf.buncle.min.js"></script>
+        <link rel="stylesheet" href="../css/informeAlumno.css"></link>
+    </head>
+
+    <body>
+        <section class="informeCompleto" id="informeCompleto">
+            <form id="informeAlumno" name="informeAlumno" th:action ="@{/alumno/informeAlumno/guardar}" th:object="${informe_alumno}" method ="post">
+                <section class="informe" id="informe">
+                    <h1>INFORME DE PRÁCTICAS</h1>
+                    <section class="datosPersonales">
+                        <h5>Datos Personales: </h5>
+                        <tr th:each="alumno : ${alumno}">
+
+                            <p>Nombre: </p>
+                            <input class="controls" type="text" name="nombre" id="nombre" th:value="${alumno.nombre}"
+                                   placeholder="Fecha"></input>
+
+                            <p>Apellidos: </p>
+                            <input class="controls" type="text" name="apellido" id="apellido" th:value="${alumno.apellidos}"
+                                   placeholder="Apellidos"></input>
+                            <p>Fecha de Nacimiento: </p>
+                            <input class="controls" type="text" name="fecha" id="fecha" th:value="${alumno.fecha_nacimiento}"
+                                   placeholder="Fecha"></input>
+                        </tr>
+                    </section>
+                    <section class="empresa">
+                        <h5>Empresa: </h5>
+
+                        <p>Nombre: </p>
+                        <input class="controls" type="text" name="nombreEmpresa" id="nombreEmpresa" th:value="${nombre_empresa}"
+                               placeholder="Nombre de la Empresa"></input>
+                    </section>
+                    <section class="fecha">
+                        <h5>Fecha Inicio: </h5>
+                        <input class="controls" type="text" name="fechaInicio" id="fechaInicio" th:field= "*{fecha_inicio}"
+                               placeholder="Fecha de Inicio"></input>
+                        <input class="controls" type="text" name="fechaInicio2" id="fechaInicio2" th:value= "${fecha_inicio}"></input>
+                        <h5>Fecha Final: </h5>
+                        <input class="controls" type="text" name="fechaFinal" id="fechaFinal" th:field= "*{fecha_final}"
+                               placeholder="Fecha del Final"></input>
+                        <input class="controls" type="text" name="fechaFinal2" id="fechaFinal2" th:value= "${fecha_final}"></input>
+                    </section>
+                    <section class="tutorPracticas">
+                        <h5>Tutor de Prácticas: </h5> 
+                        <p>Nombre: </p>
+                        <input class="controls" type="text" name="nombreTutor" id="nombreTutor" th:value="${nombre_tutor}"
+                               placeholder="Fecha"></input>
+                        <p>Apellidos: </p>
+                        <input class="controls" type="text" name="apellidoTutor" id="apellidoTutor" th:value="${apellido_tutor}"
+                               placeholder="Apellidos del Tutor"></input>
+                    </section>
+                    <input class="botones" type="button" name="botonAtras" id="botonAtras" value="Atrás" onclick=atras()
+                           style="margin-left: 0px;"></input>
+                    <button class="botones" style="margin-left: 10px">Guardar </button>
+                    <input class="botones" type="button" name="botonGenerar" id="botonGenerar" value="Genera Informe"
+                           onclick=generarInforme() style="margin-left: 10px;"></input>
+                </section>
+            </form>
+        </section>
+        <script src="../js/informeAlumno.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js"></script>
+    </body>
+</html>

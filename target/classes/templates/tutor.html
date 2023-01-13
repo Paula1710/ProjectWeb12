@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Prácticas Universitarias</title>
+        <link rel="stylesheet" href="css/inicio.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <p class="logo">Bienvenido, tutor</p>
+                <nav>
+                    <a onclick=verEmpresa() href="#">Ver Empresas</a>
+                    <a onclick=redactarInforme() href="#">Redactar Informe</a>
+                    <a onclick=cerrarSesion() href="#">Cerrar Sesión</a>
+                </nav>
+            </div>
+        </header>
+        <section id = "hero">
+            <h1>Gestion de Prácticas <br> Universitarias</h1>
+            <button onclick=redactarInforme()>REDACTAR INFORME</button>
+        </section>
+        <section id="somos-proya">
+            <div class="container">
+                <div class="img-container"></div>
+                <h2> PRÁCTICAS UNIVERSITARIAS</h2>
+                <p>Desde que tenga superados al menos la mitad de los 
+                    créditos del plan de estudios que se trate, sin perjuicio 
+                    del establecimiento de requisitos adicionales específicos 
+                    por titulación. Los estudiantes de máster pueden realizar 
+                    prácticas desde el momento en que se matriculen sin haber 
+                    superado un mínimo de créditos.No podrán participar en ninguna 
+                    oferta de prácticas los estudiantes que tengan superada toda 
+                    la carga lectiva del plan de estudios que les da derecho a la 
+                    obtención del título correspondiente.</p>
+            </div>
+        </section>
+        <section id = "nuestros-programas">
+            <div class="container">
+                <h2>Tus prácticas Universitarias</h2>
+                <div class="carta">
+                    <h3>Vista Tutor Ver Empresas</h3>
+                    <p>El tutor podrá dar ver y dar de alta a las empresas</p>
+                    <button onclick=verEmpresa()>+ Info</button>
+                </div>
+                <div class="carta">
+                    <h3>Vista Tutor Redactar Informe</h3>
+                    <p>El tutor podrá redactar los informes de los alumnos</p>
+                    <button onclick=redactarInforme()>+ Info</button>
+                </div>
+            </div>    
+        </section>
+        <footer>
+            <div class="container">
+                <p>&copy; PrácticasUniversitarias 2022</p>
+            </div>
+        </footer>
+        <script src="js/inicio.js"></script>
+    </body>
+</html>
