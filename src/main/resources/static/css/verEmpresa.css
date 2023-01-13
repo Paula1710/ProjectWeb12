@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    transform: scale(1);
+    font-family: arial;
+    background-color: rgb(230,230,230);
+}
+
+.consultar h1{
+    padding: 25px 569px;
+    border-bottom: 7px solid #3EB419;
+    font-size: 50px;
+    color: black;
+    margin-bottom: 16px;
+}
+
+.datosPersonales h5{
+    margin-top: 15px;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 16px;
+    margin-left: 300px;
+}
+
+.tabla{
+    margin: auto;
+    border-collapse: collapse;
+    font-size: 1em;
+    font-family: arial;
+    min-width: 700px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    margin-bottom: 40px;
+    background: white;
+}
+
+.tabla thead tr{
+    background-color: #3EB419;
+    color: white;
+    text-align: center;
+}
+
+.tabla th,td{
+    text-align: center;
+    padding: 12px 40px;
+}
+.tabla tbody tr{
+    border-bottom: 1px solid #3EB419;
+}
+
+.controls{
+    position: relative;
+    top:-40px;
+    width: 500px;
+    height: 20px;
+    margin-left: 600px;
+}
+
+.botones{
+    width: 140px;
+    height: 40px;
+    background-color: #3EB419;
+    border: none;
+    color: white;
+    display: inline-block;
+    margin: 0 20px;
+    margin-top: 9px;
+}
+
+#consultarInformacion{
+    position: fixed;
+    top: 0%;
+    width: auto;
+    height: auto;
+    z-index: 99;
+}
